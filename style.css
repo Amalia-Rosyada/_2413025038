@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(84, 100, 191);
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: rgb(1, 1, 85);
+    text-shadow: 0 0 10px rgb(97, 97, 182);
+}
+
+.hamburg,
+.cancel {
+    cursor: pointer;
+    color: white;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.links {
+    display: flex;
+}
+
+.links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: darkslateblue;
+}
+
+.dropdown {
+    display: none; /* Sembunyikan dropdown secara default */
+    z-index: 100;
+    position: absolute;
+    top: 10vh; /* Sesuaikan dengan tinggi navbar */
+    width: 100%;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown.active {
+    display: block; /* Tampilkan dropdown ketika aktif */
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown .links {
+    animation: slideDown 0.3s ease forwards; /* Animasi slide down */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dropdown .links a {
+    display: block; /* Ubah menjadi block untuk dropdown */
+    color: white;
+    text-decoration: none;
+    padding: 15px 0;
+    text-align: center; /* Rata tengah */
+    transition: background-color 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: darkslateblue;
+}
+
+section {
+    width: 100%;
+    height: 90vh; /* Perbaiki tinggi section */
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Rata tengah */
+    align-items: center;
+    padding: 20px; /* Tambahkan padding */
+}
+
+.main-container .image {
+    width: 300px; /* Sesuaikan ukuran gambar */
+    height: 300px; /* Sesuaikan ukuran gambar */
+    border-radius: 50%; /* Membuat gambar bulat */
+    overflow: hidden;
+    box-shadow: 0 0 50px darkslateblue;
+    margin-right: 20px; /* Jarak antara gambar dan konten */
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%; /* Pastikan gambar memenuhi area */
+    object-fit: cover; /* Mempertahankan rasio aspek gambar */
+}
+
+.main-container .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.main-container .content {
+    color: white;
+    width: 60%; /* Lebar konten */
+    min-height: 300px; /* Tinggi minimum konten */
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+    color: navy;
+    text-shadow: 0 0 10px darkslateblue;
+}
+
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+
+.content .typewriter-text {
+    color: navy;
+    text-shadow: 0 0 10px darkslateblue;
+}
+
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+
+.social-links {
+    display: flex; /* Mengatur social links dalam baris */
+    margin: 10px 0; /* Jarak atas dan bawah */
+}
+
+.social-links a {
+    margin-right: 15px; /* Jarak antar ikon */
+}
+
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid darkslateblue;
+    border-radius: 50%;
+    color: darkslateblue;
+    font-size: 1.5rem;
+    transition: transform 0.2s linear;
+}
+
+.social-links i:hover {
+    transform: scale(1.3);
+    color: black;
+    background-color: cornflowerblue;
+    filter: drop-shadow(0 0 10px darkslateblue);
+}
+
+.content button {
+    width: 50%;
+    height: 6vh;
+    margin-top: 20px; /* Jarak atas untuk tombol */
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5
+}
+
+html, body {
+    overflow-y: auto;
+    height: 100%;
+}
+
+section {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.animated-button {
+    width: 50%;
+    height: 6vh;
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(100, 149, 237, 0.9);
+    background-color: royalblue;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+

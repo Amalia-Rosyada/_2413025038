@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Amalia Rosyada_2413025038</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                Amalia <span>Rosyada</span>
+            </div>
+            <div class="links">
+                <div class="link"><a href="#" onclick="showHome()">Beranda</a></div>
+                <div class="link"><a href="#" onclick="showAbout()">Tentang Saya</a></div>
+                <div class="link"><a href="#" onclick="showReportTasks()">Tugas Laporan</a></div>
+                <div class="link"><a href="#" onclick="showVideoTasks()">Tugas Video</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg"></i>
+        </div>
+    </nav>
+    
+    <section id="home-section">
+        <div class="main-container">
+            <div class="image">
+                <img src="FOTOPROFIL.jpg" alt="Foto Profil">
+            </div>
+            <div class="content">
+                <h1>Halo saya <span class="highlight">Amalia</span></h1>
+                <div class="typewriter">Saya seorang <span class="typewriter-text highlight">Mahasiswa</span><label>|</label></div>
+                <p>Di Universitas Lampung, Fakultas Keguruan dan Ilmu Pendidikan, Jurusan Pendidikan Matematika dan Ilmu Pengetahuan Alam, Program Studi Pendidikan Teknologi Informasi, Angkatan 2024 Kelas B.</p>
+                <p>Melalui Web ini saya akan membagikan berbagai proyek maupun tugas dalam Mata Kuliah Grafika Komputer.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+                <div class="btn">
+                    <button class="animated-button">Start</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about-section" style="display: none;">
+        <div class="main-container">
+            <div class="image">
+                <img src="FOTO FORMAL.jpg" alt="Foto Formal">
+            </div>
+            <div class="content">
+                <h1>Tentang Saya</h1>
+                <p><strong>Nama:</strong> Amalia Rosyada</p>
+                <p><strong>Tempat/Tanggal Lahir:</strong> Tejo Agung, 10 Desember 2006</p>
+                <p><strong>Jenis Kelamin:</strong> Perempuan</p>
+                <p><strong>Domisili Asal:</strong> Tanggamus</p>
+                <p><strong>Agama:</strong> Islam</p>
+                <br>
+                <p><strong>PTN:</strong> Universitas Lampung</p>
+                <p><strong>Fakultas:</strong> KIP</p>
+                <p><strong>Jurusan:</strong> PMIPA</p>
+                <p><strong>Program Studi:</strong> Pendidikan Teknologi Informasi</p>
+                <p><strong>Angkatan:</strong> 2024</p>
+                <p><strong>NPM:</strong> 2413025038</p>
+                <p><strong>Kelas:</strong> B</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="video-section" style="display: none; text-align: center;">
+        <h1>Tugas Video</h1>
+        <div class="video-container">
+            <div class="video-item">
+                <h2>Tugas Praktikum 1</h2>
+                <iframe src="https://drive.google.com/file/d/1br6H3hfoYEhgN-LMAdkQi-L9AtMEsjKZ/preview" width="640" height="360" allow="autoplay"></iframe>
+            </div>
+            <div class="video-item">
+                <h2>Tugas Praktikum 2</h2>
+                <iframe src="https://drive.google.com/file/d/12zNN91N2o7q9mTAz8NviZJj_5IhHP04S/preview" width="640" height="360" allow="autoplay"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <section id="report-section" style="display: none; text-align: center;">
+        <h1>Tugas Laporan</h1>
+        <div class="pdf-container">
+            <div class="pdf-item">
+                <h2>Laporan 1</h2>
+                <iframe src="https://drive.google.com/file/d/1t-Q7esE1wX4a_c9va21ojj_4MpbKFAsq/preview" width="80%" height="500px"></iframe>
+            </div>
+            <div class="pdf-item">
+                <h2>Laporan 2</h2>
+                <iframe src="https://drive.google.com/file/d/1jO6FNazYU-4fz1Ho3dA9Vrg61R0LZ9SI/preview" width="80%" height="500px"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function showHome() {
+            document.getElementById('home-section').style.display = 'block';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('video-section').style.display = 'none';
+            document.getElementById('report-section').style.display = 'none';
+        }
+        
+        function showAbout() {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'block';
+            document.getElementById('video-section').style.display = 'none';
+            document.getElementById('report-section').style.display = 'none';
+        }
+
+        function showVideoTasks() {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('video-section').style.display = 'block';
+            document.getElementById('report-section').style.display = 'none';
+        }
+
+        function showReportTasks() {
+            document.getElementById('home-section').style.display = 'none';
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('video-section').style.display = 'none';
+            document.getElementById('report-section').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
