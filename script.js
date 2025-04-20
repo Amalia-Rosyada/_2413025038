@@ -14,3 +14,11 @@ cancel.addEventListener('click', () => {
 });
 
 // Menutup dropdown jika area di luar dropdown diklik
+
+function showSection(id) {
+    // Menyembunyikan semua section
+    ['home-section', 'about-section', 'video-section', 'report-section'].forEach(sec => {
+        document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
+    });
+    dropdown.classList.remove('active'); // Tutup menu dropdown setelah klik
+}
