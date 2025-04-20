@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Amalia Rosyada_2413025038</title>
+    <meta name="theme-color" content="#5464bf">
+    <link rel="icon" href="FOTOPROFIL.jpg" type="image/jpg">
 </head>
 <body>
     <nav>
@@ -21,6 +23,15 @@
             </div>
             <i class="fa-solid fa-bars hamburg"></i>
         </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#" onclick="showHome()">Beranda</a>
+                <a href="#" onclick="showAbout()">Tentang Saya</a>
+                <a href="#" onclick="showReportTasks()">Tugas Laporan</a>
+                <a href="#" onclick="showVideoTasks()">Tugas Video</a>
+                <a class="cancel" href="#">Tutup</a>
+            </div>
+        </div>        
     </nav>
     
     <section id="home-section">
@@ -39,7 +50,7 @@
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
                 <div class="btn">
-                    <button class="animated-button">Halo Semua</button>
+                    <button class="animated-button">Halo Semua!</button>
                 </div>
             </div>
         </div>
@@ -58,7 +69,7 @@
                 <p><strong>Domisili Asal:</strong> Tanggamus</p>
                 <p><strong>Agama:</strong> Islam</p>
                 <br>
-                <p><strong>Instansi:</strong> Universitas Lampung</p>
+                <p><strong>PTN:</strong> Universitas Lampung</p>
                 <p><strong>Fakultas:</strong> KIP</p>
                 <p><strong>Jurusan:</strong> PMIPA</p>
                 <p><strong>Program Studi:</strong> Pendidikan Teknologi Informasi</p>
@@ -84,6 +95,10 @@
                 <h2>Tugas Praktikum 3</h2>
                 <iframe src="https://drive.google.com/file/d/145puUnUS3Fl7A8T55nJAV9exrY3wShDq/preview" width="640" height="360" allow="autoplay"></iframe>
             </div>
+            <div class="video-item">
+                <h2>Tugas Praktikum 4</h2>
+                <iframe src="https://drive.google.com/file/d/17jekcvWPhpwAXSkDMx2q-KeofdST5ZNF/preview" width="640" height="360" allow="autoplay"></iframe>
+            </div>            
         </div>
     </section>
     
@@ -102,9 +117,13 @@
                 <h2>Laporan 3</h2>
                 <iframe src="https://drive.google.com/file/d/1ba68-sbKiQlFwPRhV_wwg4gfKvQ8ULAT/preview" width="80%" height="500px"></iframe>
             </div>
+            <div class="pdf-item">
+                <h2>Laporan 4</h2>
+                <iframe src="https://drive.google.com/file/d/1bHxXARz7IjAg2S81dfG_NugVPMt4mEzI/preview" width="80%" height="500px"></iframe>
+            </div>            
         </div>
-    </section>    
-    
+    </section>
+
     <script>
         function showHome() {
             document.getElementById('home-section').style.display = 'block';
@@ -134,5 +153,43 @@
             document.getElementById('report-section').style.display = 'block';
         }
     </script>
+
+    <script>
+        const hamburg = document.querySelector('.hamburg');
+        const dropdown = document.querySelector('.dropdown');
+        const cancel = document.querySelector('.cancel');
+
+        hamburg.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        cancel.addEventListener('click', () => {
+            dropdown.classList.remove('active');
+        });
+
+        function showHome() {
+            showSection('home-section');
+        }
+
+        function showAbout() {
+            showSection('about-section');
+        }
+
+        function showVideoTasks() {
+            showSection('video-section');
+        }
+
+        function showReportTasks() {
+            showSection('report-section');
+        }
+
+        function showSection(id) {
+            ['home-section', 'about-section', 'video-section', 'report-section'].forEach(sec => {
+                document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
+            });
+            dropdown.classList.remove('active'); // Tutup menu setelah klik
+        }
+    </script>
+
 </body>
 </html>
