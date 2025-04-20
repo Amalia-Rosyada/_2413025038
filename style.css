@@ -338,3 +338,60 @@ section {
 .carousel img:hover {
     transform: scale(1.05);
 }
+
+@media screen and (max-width: 768px) {
+    /* Menyesuaikan menu dropdown agar lebih rapi di mobile */
+    .hamburg {
+        display: block;
+    }
+
+    .nav-container .links {
+        display: none;
+    }
+
+    .dropdown .links {
+        display: block;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .main-container .image {
+        margin-bottom: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .main-container .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Tombol lebih lebar pada layar kecil */
+    .animated-button {
+        width: 80%;
+    }
+
+    /* Menyesuaikan ukuran iframe agar pas dengan layar kecil */
+    .video-container iframe,
+    .pdf-container iframe {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .social-links a {
+        margin-right: 10px;
+    }
+
+    .links {
+        flex-direction: column; /* Merapikan link dropdown */
+    }
+
+    .dropdown .links a {
+        padding: 12px;
+        text-align: center;
+    }
+}
