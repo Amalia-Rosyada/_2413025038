@@ -20,6 +20,8 @@
                 <div class="link"><a href="#" onclick="showAbout()">Tentang Saya</a></div>
                 <div class="link"><a href="#" onclick="showReportTasks()">Tugas Laporan</a></div>
                 <div class="link"><a href="#" onclick="showVideoTasks()">Tugas Video</a></div>
+                <div class="link"><a href="#" onclick="showImageTasks()">Kode Program</a></div>
+                <div class="link"><a href="#" onclick="showOther()">Lainnya</a></div>
             </div>
             <i class="fa-solid fa-bars hamburg"></i>
         </div>
@@ -29,6 +31,8 @@
                 <a href="#" onclick="showAbout()">Tentang Saya</a>
                 <a href="#" onclick="showReportTasks()">Tugas Laporan</a>
                 <a href="#" onclick="showVideoTasks()">Tugas Video</a>
+                <a href="#" onclick="showImageTasks()">Kode Program</a>
+                <a href="#" onclick="showOther()">Lainnya</a>
                 <a class="cancel" href="#">Tutup</a>
             </div>
         </div>        
@@ -41,10 +45,45 @@
             </div>
             <div class="content">
                 <h1>Halo saya <span class="highlight">Amalia</span></h1>
-                <div class="typewriter">Saya seorang <span class="typewriter-text highlight">Mahasiswa</span><label>|</label></div>
+                <div class="typewriter">Saya seorang <span id="typewriter-text" class="highlight"></span><label>|</label></div>
+                <span id="typewriter-text" class="highlight"></span>
+                <style>
+                    .highlight {
+                        color: navy;
+                    }
+                </style>                
+                <script>
+                    const typeText = "Mahasiswa";
+                    const typeEl = document.getElementById("typewriter-text");
+                
+                    let charIndex = 0;
+                    let isDeleting = false;
+                
+                    function loopTypewriter() {
+                        if (!isDeleting) {
+                            typeEl.textContent = typeText.substring(0, charIndex + 1);
+                            charIndex++;
+                            if (charIndex === typeText.length) {
+                                isDeleting = true;
+                                setTimeout(loopTypewriter, 1500); // jeda sebelum hapus
+                                return;
+                            }
+                        } else {
+                            typeEl.textContent = typeText.substring(0, charIndex - 1);
+                            charIndex--;
+                            if (charIndex === 0) {
+                                isDeleting = false;
+                            }
+                        }
+                        setTimeout(loopTypewriter, isDeleting ? 50 : 100);
+                    }
+                
+                    window.addEventListener("load", loopTypewriter);
+                </script>
+                
                 <p>Di Universitas Lampung, Fakultas Keguruan dan Ilmu Pendidikan, Jurusan Pendidikan Matematika dan Ilmu Pengetahuan Alam, Program Studi Pendidikan Teknologi Informasi, Angkatan 2024 Kelas B.</p>
                 <p>Melalui Web ini saya akan membagikan berbagai proyek maupun tugas dalam Mata Kuliah Grafika Komputer.</p>
-                <p>Catatan: Tugas yang berisi Kode Program terdapat pada setiap "Tugas Laporan"</p>
+                <p>Catatan: Tugas yang berisi hasil Kode Program terdapat pada setiap "Tugas Laporan"</p>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -82,7 +121,6 @@
     </section>
     
     <section id="video-section" style="display: none; text-align: center;">
-        <h1>Tugas Video</h1>
         <div class="video-container">
             <div class="video-item">
                 <h2>Tugas Praktikum 1</h2>
@@ -104,7 +142,6 @@
     </section>
     
     <section id="report-section" style="display: none; text-align: center;">
-        <h1>Tugas Laporan</h1>
         <div class="pdf-container">
             <div class="pdf-item">
                 <h2>Laporan 1</h2>
@@ -124,6 +161,57 @@
             </div>            
         </div>
     </section>
+
+    <section id="image-section" style="display: none; text-align: center;">
+        <div class="image-tasks-container">
+            <div class="image-task">
+                <h2>Algoritma Garis</h2>
+                <img src="DDA DAN BRE.png" alt="Program 1" style="max-width: 50%; height: auto;">
+                <img src="DDA DAN BRE2..png" alt="Program 1" style="max-width: 50%; height: auto;">
+            </div>
+            <div class="image-task">
+                <h2>Algoritma Lingkaran</h2>
+                <img src="LING DDA DAN BRE.png" alt="Program 2" style="max-width: 50%; height: auto;">
+                <img src="LING DDA DAN BRE2.png" alt="Program 2" style="max-width: 50%; height: auto;">
+                <img src="LING DDA DAN BRE3.png" alt="Program 2" style="max-width: 50%; height: auto;">
+                <img src="LING DDA DAN BRE4.png" alt="Program 2" style="max-width: 50%; height: auto;">
+            </div>
+            <div class="image-task">
+                <h2>Algoritma Kurva</h2>
+                <img src="KURVA.png" alt="Program 3" style="max-width: 50%; height: auto;">
+                <img src="KURVA2.png" alt="Program 3" style="max-width: 50%; height: auto;">
+                <img src="KURVA3.png" alt="Program 3" style="max-width: 50%; height: auto;">
+                <img src="KURVA4.png" alt="Program 3" style="max-width: 50%; height: auto;">
+                <img src="KURVA5.png" alt="Program 3" style="max-width: 50%; height: auto;">
+            </div>
+        </div>
+    </section>
+
+    <section id="other-section" style="display: none; padding: 40px 20px;">
+        <div class="main-container" style="max-width: 700px; margin: auto; text-align: center;">
+            <h2 style="font-size: 28px; margin-bottom: 20px; color: #333;">Dokumen Spreadsheet</h2>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 15px;">
+                <li>
+                    <a href="https://docs.google.com/spreadsheets/d/1Qp7C3kGKMjEFx_2YLTAvCmULi5EbGURz82paaSTSbrM/edit?usp=sharing" target="_blank" 
+                       style="display: inline-block; background-color: #4CAF50; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s;">
+                        📊 Tabel Iterasi DDA – Lihat di Google Sheets
+                    </a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/spreadsheets/d/1GwI43GHcOmwdQuraN5Ro_M7JRiDV1vQ1BTIhp_OeOok/edit?usp=sharing" target="_blank" 
+                       style="display: inline-block; background-color: #2196F3; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s;">
+                        🟢 Lingkaran Midpoint – Lihat di Google Sheets
+                    </a>
+                </li>
+                <li>
+                    <a href="https://docs.google.com/spreadsheets/d/1ToHQgNB4krQVatXSepUB07XvnqnxvH4Pd0mvIVaNhdk/edit?usp=sharing" target="_blank" 
+                       style="display: inline-block; background-color: #9C27B0; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: background-color 0.3s;">
+                        🌀 Kurva Bézier Kuadratik – Lihat di Google Sheets
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>        
 
     <script>
         function showHome() {
@@ -170,7 +258,7 @@
 
         function showHome() {
             showSection('home-section');
-        }
+        }   
 
         function showAbout() {
             showSection('about-section');
@@ -184,13 +272,22 @@
             showSection('report-section');
         }
 
+        function showImageTasks() {
+            showSection('image-section');
+        }
+
+        function showOther() {
+            showSection('other-section');
+        }
+
         function showSection(id) {
-            ['home-section', 'about-section', 'video-section', 'report-section'].forEach(sec => {
+            ['home-section', 'about-section', 'video-section', 'report-section', 'image-section', 'other-section'].forEach(sec => {
                 document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
             });
             dropdown.classList.remove('active'); // Tutup menu setelah klik
         }
     </script>
+
 
 </body>
 </html>
